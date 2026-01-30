@@ -13,6 +13,11 @@ const nextConfig = {
       },
     ],
   },
+  webpack: (config, { isServer }) => {
+    // Disable webpack caching for Cloudflare Pages
+    config.cache = false;
+    return config;
+  },
 };
 
 export default nextConfig;
